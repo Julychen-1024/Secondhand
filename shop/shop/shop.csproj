@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9F264BB-3A19-4F5E-963A-58C07F1BF488}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>shop</RootNamespace>
+    <AssemblyName>shop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\MySQL\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\MySQL\Assemblies\v4.5.2\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="addCart_pdl.aspx" />
+    <Content Include="bootstrap\fonts\fontawesome-webfont.eot" />
+    <Content Include="bootstrap\fonts\fontawesome-webfont.ttf" />
+    <Content Include="bootstrap\fonts\fontawesome-webfont.woff" />
+    <Content Include="bootstrap\fonts\fontawesome-webfont.woff2" />
+    <Content Include="bootstrap\fonts\FontAwesome.otf" />
+    <Content Include="bootstrap\js\hover_dropdown.js" />
+    <Content Include="buy_order.aspx" />
+    <Content Include="cart_buy.aspx" />
+    <Content Include="cart_delete.aspx" />
+    <Content Include="goodsdetail.aspx" />
+    <Content Include="iframe.Master" />
+    <Content Include="image\11.jpg" />
+    <Content Include="js\cart.js" />
+    <Content Include="js\product.js" />
+    <Content Include="jyc\css\base.css" />
+    <Content Include="jyc\css\page.css" />
+    <Content Include="jyc\img\icon-1.png" />
+    <Content Include="jyc\img\icon-2.png" />
+    <Content Include="jyc\img\icon-3.png" />
+    <Content Include="jyc\img\icon-4.png" />
+    <Content Include="jyc\img\icon-5.png" />
+    <Content Include="myinfo.aspx" />
+    <Content Include="corder.aspx" />
+    <Content Include="order_delete.aspx" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="iframe2.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\font-awesome.min.css" />
+    <Content Include="bootstrap\fonts\fontawesome-webfont.svg" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\jquery.min.js" />
+    <Content Include="bootstrap\js\popper.min.js" />
+    <Content Include="image\1.jpg" />
+    <Content Include="image\2.jpg" />
+    <Content Include="image\3.png" />
+    <Content Include="image\4.png" />
+    <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="mygoods.aspx" />
+    <Content Include="mysqltest.aspx" />
+    <Content Include="plugins\easing\easing.js" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="plugins\greensock\animation.gsap.min.js" />
+    <Content Include="plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="plugins\greensock\TimelineMax.min.js" />
+    <Content Include="plugins\greensock\TweenMax.min.js" />
+    <Content Include="plugins\Isotope\fitcolumns.js" />
+    <Content Include="plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="plugins\parallax-js-master\parallax.min.js" />
+    <Content Include="plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="register.aspx" />
+    <Content Include="shoppingcart2.aspx" />
+    <Content Include="showproducts.aspx" />
+    <Content Include="styles\blog.css" />
+    <Content Include="styles\blog_responsive.css" />
+    <Content Include="styles\bootstrap-4.1.3\bootstrap.css" />
+    <Content Include="styles\bootstrap-4.1.3\bootstrap.min.js" />
+    <Content Include="styles\bootstrap-4.1.3\popper.js" />
+    <Content Include="styles\cart.css" />
+    <Content Include="styles\cart_responsive.css" />
+    <Content Include="styles\categories.css" />
+    <Content Include="styles\categories_responsive.css" />
+    <Content Include="styles\checkout.css" />
+    <Content Include="styles\checkout_responsive.css" />
+    <Content Include="styles\main_styles.css" />
+    <Content Include="styles\product.css" />
+    <Content Include="styles\product_responsive.css" />
+    <Content Include="styles\responsive.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addCart_pdl.aspx.cs">
+      <DependentUpon>addCart_pdl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addCart_pdl.aspx.designer.cs">
+      <DependentUpon>addCart_pdl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="buy_order.aspx.cs">
+      <DependentUpon>buy_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="buy_order.aspx.designer.cs">
+      <DependentUpon>buy_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart_buy.aspx.cs">
+      <DependentUpon>cart_buy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart_buy.aspx.designer.cs">
+      <DependentUpon>cart_buy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart_delete.aspx.cs">
+      <DependentUpon>cart_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart_delete.aspx.designer.cs">
+      <DependentUpon>cart_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="code\dbutils.cs" />
+    <Compile Include="code\mysql_test.cs" />
+    <Compile Include="goodsdetail.aspx.cs">
+      <DependentUpon>goodsdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="goodsdetail.aspx.designer.cs">
+      <DependentUpon>goodsdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iframe.Master.cs">
+      <DependentUpon>iframe.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iframe.Master.designer.cs">
+      <DependentUpon>iframe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="iframe2.Master.cs">
+      <DependentUpon>iframe2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iframe2.Master.designer.cs">
+      <DependentUpon>iframe2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mygoods.aspx.cs">
+      <DependentUpon>mygoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mygoods.aspx.designer.cs">
+      <DependentUpon>mygoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myinfo.aspx.cs">
+      <DependentUpon>myinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myinfo.aspx.designer.cs">
+      <DependentUpon>myinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mysqltest.aspx.cs">
+      <DependentUpon>mysqltest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mysqltest.aspx.designer.cs">
+      <DependentUpon>mysqltest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order_delete.aspx.cs">
+      <DependentUpon>order_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order_delete.aspx.designer.cs">
+      <DependentUpon>order_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdl_bean\user.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shoppingcart2.aspx.cs">
+      <DependentUpon>shoppingcart2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shoppingcart2.aspx.designer.cs">
+      <DependentUpon>shoppingcart2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="showproducts.aspx.cs">
+      <DependentUpon>showproducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showproducts.aspx.designer.cs">
+      <DependentUpon>showproducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="corder.aspx.cs">
+      <DependentUpon>corder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="corder.aspx.designer.cs">
+      <DependentUpon>corder.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="jyc\js\" />
+    <Folder Include="pdl_js\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>37939</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:37939/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

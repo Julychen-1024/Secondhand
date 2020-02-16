@@ -1,0 +1,346 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="iframe.master.cs" Inherits="shop.iframe" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>二手交易平台</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.min.css"/>
+	<script src="bootstrap/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="bootstrap/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            width:100%;
+            height:100%;
+            background:#ffffff;
+            padding-top:70px;
+        }
+       .border-bottom{
+                border-bottom: 1px solid #17a2b8!important;
+       }
+    </style>
+</head>
+<body>
+			<div style="background-color: #e3f2fd;">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-light border-bottom" style="background-color: #e3f2fd; ">
+                <div class="container">
+			  <a class="navbar-brand" href="#"><h2>Second Hand</h2></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="index.aspx">首页 <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          我的商店
+			        </a>
+			        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+			          <a class="dropdown-item" href="mygoods.aspx">我的商品</a>
+			          <a class="dropdown-item" href="corder.aspx">客户订单</a>
+			        </div>
+			      </li>
+                    <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          个人中心
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                      <a class="dropdown-item" href="buy_order.aspx">我的订单</a>
+			          <a class="dropdown-item" href="shoppingcart2.aspx">购物车</a>
+			        </div>
+			      </li>
+			    </ul>
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                      <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-user"></i> User
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                          <a class="dropdown-item btn btn-outline-dark" id="login_targer" style="padding-right:0px">登录</a>
+                          <a class="dropdown-item btn btn-outline-dark" id="exit" style="padding-right:0px">退出</a>
+                        </div>
+                      </div>
+                    </div>
+			  </div>
+              </div>
+			</nav>
+            
+        
+ 
+    <!-- 登录模态框的实现 -->
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <div class="container-fluid">
+                    <div class="row">
+                        <h5 class="modal-title col-2" id="exampleModalScrollableTitle" >登&nbsp;录</h5>
+                         <span class=" text-danger col-5 text-center" id="result"></span>
+                        <button type="button" class="close col-5 text-right" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            
+               
+            
+            </div>
+            <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="username" class="col-form-label">您的账号：</label>
+                    <input type="text" class="form-control" id="username"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="userpwd" class="col-form-label">您的密码：</label>
+                    <input type="password" class="form-control" id="userpwd"/>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer container-fluid align-content-center">
+                <button type="button" class="btn btn-secondary btn-md register">注册</button>
+                <div >
+                    <button type="button" class="btn btn-secondary btn-md "  data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-md " id="login" >登录</button>
+                 </div>
+            </div>
+        </div>
+        </div>
+    </div>
+        
+        	<!-- 注册模态框的实现 -->
+		    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+		        <div class="modal-dialog modal-dialog-scrollable" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header" >
+		                <div class="container-fluid">
+		                    <div class="row">
+		                        <h5 class="modal-title col-2" id="registersModalScrollable" >注&nbsp;册</h5>
+		                         <span class=" text-danger col-5 text-center" id="reg_result"></span>
+		                        <button type="button" class="close col-5 text-right" data-dismiss="modal" aria-label="Close">
+		                            <span aria-hidden="true">&times;</span>
+		                        </button>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="modal-body">
+		                <form>
+		
+		                  <div class="form-group">
+		                    <label for="u_id" class="col-form-label">账号：</label>
+		                    <input type="text" class="form-control" id="u_id"/>
+		                  </div>
+		                  <div class="form-group">
+		                    <label for="u_name" class="col-form-label">昵称：</label>
+		                    <input type="text" class="form-control" id="u_name"/>
+		                  </div>
+		                  <div class="form-group">
+		                    <label for="u_password" class="col-form-label">您的密码：</label>
+		                    <input type="password" class="form-control" id="u_password"/>
+		                  </div>
+		                  <div class="form-group">
+		                    <label for="u_tel" class="col-form-label">电话号码：</label>
+		                    <input type="text" class="form-control" id="u_tel"/>
+		                  </div>
+		                   <div class="form-group">
+		                     <label for="u_email" class="col-form-label">Email：</label>
+		                     <input type="text" class="form-control" id="u_email"/>
+		                  </div>
+		                  <div>
+		                    <label for="u_addr" class="col-form-label">地址：</label>
+		                    <input type="text" class="form-control" id="u_addr"/>
+		                  </div>
+		            
+		                </form>
+		                  
+		            </div>
+		            <div class="modal-footer container-fluid align-content-center">
+		                <div >
+		                    <button type="button" class="btn btn-secondary btn-md "  data-dismiss="modal">取消</button>
+		                    <button type="button" class="btn btn-primary btn-md " id="btn_register" >注册</button>
+		                 </div>
+		            </div>
+		        </div>
+		        </div>
+		    </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+
+    </asp:ContentPlaceHolder>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+                //alert("进入函数");
+                var id = $("#username").val();
+                var pwd = $("#userpwd").val();
+                alert(id + " " + pwd);
+                if ("" != id && "" != pwd) {
+                    $.post("login.aspx",
+                    {
+                        flag: 1,
+                        u_id: id,
+                        u_pwd: pwd
+                    },
+                    function (data, status) {
+                        //alert("数据：" + data + "\n状态：" + status);
+                        $('#result').html("");
+                        $('#result').fadeIn();
+                        if (data != null && data == "true") {
+                            $("#result").removeClass("text-danger")
+                            $("#result").addClass("text-success");
+                            $("#result").html("<h2>登录成功！</h2>");
+                            $('#exampleModalScrollable').fadeOut(2000);
+                            $('#exampleModalScrollable').modal('hide');
+                            $(".disabled").removeClass("disabled");
+                            $("#login_targer").text("我的信息");
+                            
+                        }
+                        else {
+                            $("#result").removeClass("text-success")
+                            $("#result").addClass("text-danger");
+                            $("#result").html("<h2>登录失败！</h2>");
+                            $('#result').fadeOut(1000);
+                        }
+                    });
+                }
+                
+            });
+
+            function login() {
+                var val = $("#login_targer").text();
+                if (val != null && "我的信息" == val) {
+                    window.location.href = "myinfo.aspx";//TO DO 将请求调转到我的信息页面
+                }
+                else {
+                    //alert("数据：" + data + "\n状态：" + status);
+                    $("#username").text("");
+                    $("#userpwd").text("");
+
+                    $("#result").removeClass("text-success")
+                    $("#result").addClass("text-danger");
+                    $("#result").html("");
+                    $('#result').fadeIn("slow");
+                    $('#exampleModalScrollable').modal('show');
+                }
+            }
+            $("#login_targer").click(login);
+           // $("#login_targer").click(function () {
+                
+                //var val = $("#login_targer").text();
+                //if (val != null && "我的信息" == val) {
+                //    //TO DO 将请求调转到我的信息页面
+                //}
+                //else {
+                //    //alert("数据：" + data + "\n状态：" + status);
+                //    $("#username").text("");
+                //    $("#userpwd").text("");
+
+                //    $("#result").removeClass("text-success")
+                //    $("#result").addClass("text-danger");
+                //    $("#result").html("");
+                //    $('#result').fadeIn("slow");
+                //    $('#exampleModalScrollable').modal('show');
+                //}
+            //});
+            $(".register").click(function () {
+                $('#exampleModalScrollable').modal('hide');
+                $("#u_id").text("");
+                $("#u_password").text("");
+                $("#u_name").text("");
+                $("#u_tel").text("");
+                $("#u_email").text("");
+                $("#u_addr").text("");
+                $("#reg_result").removeClass("text-success")
+                $("#reg_result").addClass("text-danger");
+                $("#reg_result").html("");
+                $('#reg_result').fadeIn("slow");
+                $('#register').modal('show');
+                
+            });
+            $("#btn_register").click(function () {
+                //alert("进入函数");
+                var id = $("#u_id").val();
+                var name = $("#u_name").val();
+                var pwd = $("#u_password").val();
+                var tel = $("#u_tel").val();
+                var email = $("#u_email").val();
+                var addr = $("#u_addr").val();
+                alert(id + " " + pwd);
+                if ("" != id && "" != pwd && "" != name && "" != tel && "" != email && "" != addr ) {
+                    $.post("register.aspx",
+                    {
+                        id: id,
+                        name: name,
+                        pwd: pwd,
+                        tel: tel,
+                        email: email,
+                        addr:addr
+                    },
+                    function (data, status) {
+                        //alert("数据：" + data + "\n状态：" + status);
+                        $('#reg_result').html("");
+                        $('#reg_result').fadeIn();
+                        if (data != null && data == "true") {
+                            $("#reg_result").removeClass("text-danger")
+                            $("#reg_result").addClass("text-success");
+                            $("#reg_result").html("<h2>注册成功！</h2>");
+                            $('#register').fadeOut(2000);
+                            $('#register').modal('hide');
+
+                        }
+                        else {
+                            $("#result").removeClass("text-success")
+                            $("#result").addClass("text-danger");
+                            $("#result").html("<h2>注册失败！</h2>");
+                            $('#result').fadeOut(1000);
+                        }
+                    });
+                }
+
+            });
+            $("#exit").click(function () {
+
+                var val = $("#login_targer").text();
+                if (val != null && "我的信息" == val) {
+                    $.post("login.aspx",
+                    {
+                        flag: 0,
+                        exit: 1
+                    },
+                    function (data, status) {
+                        if (data != null && data == "true") {
+                            $("#login_targer").text("未登录");
+                            $("#navbarDropdown").addClass("disabled");
+                            $("#navbarDropdown1").addClass("disabled");
+                        }
+                        else {
+                            alert("退出失败，服务器问题");
+                        }
+                    });
+                }
+                
+                    
+               
+
+            });
+        });
+    </script>
+</body>
+</html>
